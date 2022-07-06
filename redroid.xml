@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="redroid" fetch="ssh://git@github.com/remote-android" />
+
+    <project name="device_redroid" remote="redroid" />
+    <project name="device_redroid-prebuilts" remote="redroid" />
+    <project name="redroid-c2" remote="redroid" />
+    <project name="redroid-gatekeeper" remote="redroid" />
+    <project name="redroid-omx" remote="redroid" />
+    <project name="redroid-vncserver" remote="redroid" />
+    <project name="vendor_redroid" remote="redroid" />
+
+</manifest>
