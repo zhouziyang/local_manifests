@@ -11,11 +11,15 @@ declare -A links=(
     [platform_system_libhwbinder]=system/libhwbinder
     [platform_system_netd]=system/netd
     [platform_system_vold]=system/vold
+    [platform_manifests]=manifest
 )
 
 for key in "${!links[@]}"
 do
     value=${links[$key]}
-    echo "$key => $value"
-    ln -fs "platform/${value}.git" ${ROOT}/${key}.git
+    link_name=${ROOT}/${key}.git
+    if [ ! -L $link_name ]; then
+        echo "$key => $value"
+        ln -s "platform/${value}.git" $link_name
+    fi
 done
