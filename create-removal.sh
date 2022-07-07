@@ -13,6 +13,8 @@ read -r -d '' removals <<- EOM
 	`grep 'name="trusty' $MANIFEST`
 EOM
 
+removals=$(echo "$removals" | grep -v '"kernel/configs\|"kernel/prebuilts\|"kernel/tests')
+
 cat > removal.xml <<- EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
